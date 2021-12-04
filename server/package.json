@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "express:build": "tsc",
+    "express:start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
