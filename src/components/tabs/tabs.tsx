@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 interface TabsProps {
     tabs: Array<{
@@ -10,6 +10,12 @@ interface TabsProps {
 
 export const Tabs = ({tabs}: TabsProps) => {
     const [activeTab, setActiveTab] = useState(tabs?.[0]?.code);
+
+    // По принципу componentDidMount и componentDidUpdate:
+    useEffect(() => {
+        // Обновляем заголовок документа, используя API браузера
+        document.title = `Opened tab "${activeTab}"`;
+    });
 
     return (
         <div>
