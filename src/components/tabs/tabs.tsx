@@ -13,8 +13,15 @@ export const Tabs = ({tabs}: TabsProps) => {
 
     // По принципу componentDidMount и componentDidUpdate:
     useEffect(() => {
-        // Обновляем заголовок документа, используя API браузера
         document.title = `Opened tab "${activeTab}"`;
+    });
+    useEffect(() => {
+        fetch('/api/products').then(async (body) => {
+            console.log('res:body:', body);
+            // const json = await body.text();
+            // console.log('res:json', json);
+        });
+
     });
 
     return (
